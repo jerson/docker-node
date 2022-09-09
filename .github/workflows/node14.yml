@@ -33,7 +33,7 @@ jobs:
         with:
           context: "{{defaultContext}}:14"
           push: ${{ github.event_name != 'pull_request' }}
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           tags: ghcr.io/jerson/docker-node/node:14
           labels: ${{ steps.meta.outputs.labels }}
       - run: echo ${{ steps.docker_build.outputs.digest }}
